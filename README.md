@@ -36,6 +36,7 @@ pass/fail data across public coding benchmarks — instead of single leaderboard
 | DS-1000 library tags | [xlangai/DS-1000](https://huggingface.co/datasets/xlangai/DS-1000) |
 | BigCodeBench solve rates | [bigcode/bigcodebench-solve-rate](https://huggingface.co/datasets/bigcode/bigcodebench-solve-rate) |
 | Frontier aggregate scores | [Epoch AI benchmark data](https://epoch.ai/data/benchmark_data.zip) (CC-BY) |
+| SWE-bench Verified per-instance scores (2026 models) | Epoch's [inspect-ai logs](https://epoch.ai/data/benchmark_data.zip) — per-sample results extracted from `summaries.json` via HTTP range reads (no full-log downloads) |
 
 BigCodeBench is difficulty-only: generations are public but per-task per-model scores
 require re-executing all submissions.
@@ -47,6 +48,7 @@ pip install -r requirements.txt
 python pipeline/fetch_eval_arena.py   # per-problem matrices (cached in data/raw)
 python pipeline/fetch_metadata.py     # problem metadata / skill tags
 python pipeline/fetch_epoch.py        # frontier aggregate scores (Epoch AI)
+python pipeline/fetch_epoch_swe.py    # per-instance SWE-bench scores from Epoch inspect logs
 python pipeline/build.py              # normalize -> data/processed/*.parquet
 python pipeline/export_site.py        # analysis -> site/data/*.json
 python -m http.server -d site 8000    # view at http://localhost:8000

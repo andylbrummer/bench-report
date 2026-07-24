@@ -29,7 +29,9 @@ BENCHMARK_INFO = {
 }
 
 FAMILY_PATTERNS = [
-    (r"gpt[-_]?5\.1", "gpt-5.1"), (r"gpt[-_]?5\.2", "gpt-5.2"), (r"gpt[-_]?5\b", "gpt-5"),
+    (r"gpt[-_]?5\.6", "gpt-5.6"), (r"gpt[-_]?5\.5", "gpt-5.5"), (r"gpt[-_]?5\.4", "gpt-5.4"),
+    (r"gpt[-_]?5\.3", "gpt-5.3"), (r"gpt[-_]?5\.2", "gpt-5.2"), (r"gpt[-_]?5\.1", "gpt-5.1"),
+    (r"gpt[-_]?5[-_]?mini", "gpt-5-mini"), (r"gpt[-_]?5\b", "gpt-5"),
     (r"gpt[-_]?4\.1", "gpt-4.1"), (r"gpt[-_]?4o[-_]?mini", "gpt-4o-mini"), (r"gpt[-_]?4o", "gpt-4o"),
     (r"gpt[-_]?4[-_]?turbo", "gpt-4-turbo"), (r"gpt[-_]?4\b", "gpt-4"), (r"gpt[-_]?35|gpt[-_]?3\.5", "gpt-3.5"),
     (r"o1[-_]?mini", "o1-mini"), (r"o1[-_]?preview", "o1-preview"), (r"\bo1\b", "o1"),
@@ -37,6 +39,9 @@ FAMILY_PATTERNS = [
     (r"claude[-_]?4\.5[-_]?opus|claude[-_]?opus[-_]?4\.5", "claude-opus-4.5"),
     (r"claude[-_]?4\.5[-_]?sonnet|claude[-_]?sonnet[-_]?4\.5", "claude-sonnet-4.5"),
     (r"claude[-_]?4\.5[-_]?haiku|claude[-_]?haiku[-_]?4\.5", "claude-haiku-4.5"),
+    (r"claude[-_]?opus[-_]?4[-_.]?7", "claude-opus-4.7"),
+    (r"claude[-_]?opus[-_]?4[-_.]?6", "claude-opus-4.6"),
+    (r"claude[-_]?sonnet[-_]?4[-_.]?6", "claude-sonnet-4.6"),
     (r"claude[-_]?opus[-_]?4\.1", "claude-opus-4.1"),
     (r"claude[-_]?(?:opus[-_]?4|4[-_]?opus)\b", "claude-opus-4"),
     (r"claude[-_]?(?:sonnet[-_]?4|4[-_]?sonnet)\b", "claude-sonnet-4"), (r"claude[-_]?3\.7[-_]?sonnet|claude[-_]?3[-_]?7[-_]?sonnet", "claude-3.7-sonnet"),
@@ -44,14 +49,16 @@ FAMILY_PATTERNS = [
     (r"claude[-_]?3\.5[-_]?haiku|claude[-_]?3[-_]?5[-_]?haiku", "claude-3.5-haiku"),
     (r"claude[-_]?3[-_]?opus", "claude-3-opus"), (r"claude[-_]?3[-_]?sonnet", "claude-3-sonnet"),
     (r"claude[-_]?3[-_]?haiku", "claude-3-haiku"), (r"claude[-_]?2", "claude-2"),
-    (r"gemini[-_]?3[-_]?pro", "gemini-3-pro"), (r"gemini[-_]?2\.5[-_]?pro", "gemini-2.5-pro"),
+    (r"gemini[-_]?3\.5[-_]?flash", "gemini-3.5-flash"), (r"gemini[-_]?3\.1[-_]?pro", "gemini-3.1-pro"),
+    (r"gemini[-_]?3[-_]?flash", "gemini-3-flash"), (r"gemini[-_]?3[-_]?pro", "gemini-3-pro"), (r"gemini[-_]?2\.5[-_]?pro", "gemini-2.5-pro"),
     (r"gemini[-_]?2\.5[-_]?flash", "gemini-2.5-flash"), (r"gemini[-_]?2\.0[-_]?flash", "gemini-2.0-flash"),
     (r"gemini[-_]?1\.5[-_]?pro", "gemini-1.5-pro"), (r"gemini[-_]?1\.5[-_]?flash", "gemini-1.5-flash"),
-    (r"deepseek[-_]?(r1|reasoner)", "deepseek-r1"), (r"deepseek[-_]?v3\.2", "deepseek-v3.2"),
+    (r"deepseek[-_]?(r1|reasoner)", "deepseek-r1"), (r"deepseek[-_]?v4", "deepseek-v4"),
+    (r"deepseek[-_]?v3\.2", "deepseek-v3.2"),
     (r"deepseek[-_]?v3\.1", "deepseek-v3.1"), (r"deepseek[-_]?v3", "deepseek-v3"),
     (r"deepseek[-_]?(chat|v2\.5)", "deepseek-v2.5"), (r"deepseek[-_]?coder[-_]?v2", "deepseek-coder-v2"),
     (r"deepseek[-_]?coder", "deepseek-coder"),
-    (r"qwen3[-_]?coder", "qwen3-coder"), (r"qwen3\b", "qwen3"), (r"qwq", "qwq-32b"),
+    (r"qwen3[-_]?coder", "qwen3-coder"), (r"qwen3\.7", "qwen3.7"), (r"qwen3\.6", "qwen3.6"), (r"qwen3\b", "qwen3"), (r"qwq", "qwq-32b"),
     (r"qwen2\.5[-_]?coder", "qwen2.5-coder"), (r"qwen2\.5", "qwen2.5"), (r"codeqwen", "codeqwen1.5"),
     (r"qwen1\.5|qwen--qwen1", "qwen1.5"), (r"qwen2\b", "qwen2"),
     (r"llama[-_]?3[-_.]?3", "llama-3.3"), (r"llama[-_]?3[-_.]?1", "llama-3.1"), (r"llama[-_]?3\b", "llama-3"),
@@ -62,7 +69,9 @@ FAMILY_PATTERNS = [
     (r"gemma[-_]?3", "gemma-3"), (r"gemma[-_]?2", "gemma-2"), (r"gemma", "gemma"),
     (r"phi[-_]?4", "phi-4"), (r"phi[-_]?3", "phi-3"), (r"phi", "phi"),
     (r"grok[-_]?4", "grok-4"), (r"grok[-_]?3", "grok-3"), (r"grok[-_]?2", "grok-2"), (r"grok", "grok"),
+    (r"glm[-_]?5\.2", "glm-5.2"), (r"glm[-_]?5\.1", "glm-5.1"), (r"glm[-_]?5\b", "glm-5"),
     (r"glm[-_]?4\.7", "glm-4.7"), (r"glm[-_]?4\.6", "glm-4.6"), (r"glm", "glm"),
+    (r"kimi[-_]?k2\.6", "kimi-k2.6"), (r"kimi[-_]?k2\.5", "kimi-k2.5"),
     (r"kimi[-_]?k2", "kimi-k2"), (r"kimi", "kimi"),
     (r"yi[-_]?coder", "yi-coder"), (r"\byi\b|yi[-_]?1\.5", "yi"),
     (r"command[-_]?r\+", "command-r-plus"), (r"command[-_]?r", "command-r"),
@@ -79,6 +88,8 @@ FAMILY_PATTERNS = [
 
 VARIANT_PATTERNS = [
     (r"\bthinking\b|\(thinking\)|[-_]thinking", "thinking"),
+    (r"[-_]xhigh\b", "high"), (r"[_]max$", "high"),
+    (r"[-_]high\b", "high"), (r"[-_]medium\b", "medium"), (r"[-_]low\b", "low"),
     (r"[-_]base\b|\bbase\b", "base"),
     (r"instruct|[-_]chat\b|[-_]it\b", "instruct"),
 ]
@@ -115,9 +126,23 @@ def load_results() -> pd.DataFrame:
         df.columns = ["model_raw", "problem_id", "pass1"]
         df["benchmark"] = bench
         frames.append(df)
+    epoch_swe = os.path.join(ROOT, "data", "raw", "epoch_swe", "matrix.parquet")
+    if os.path.exists(epoch_swe):
+        df = pd.read_parquet(epoch_swe)
+        df["benchmark"] = "swebench_verified"
+        frames.append(df)
     res = pd.concat(frames, ignore_index=True)
     canon_map = {raw: canon(raw) for raw in res["model_raw"].unique()}
     res["model"] = res["model_raw"].map(canon_map)
+
+    dates_path = os.path.join(ROOT, "data", "raw", "epoch_swe", "dates.json")
+    if os.path.exists(dates_path):
+        raw_dates = json.load(open(dates_path))
+        overrides = {}
+        for raw, d in raw_dates.items():
+            c = canon_map.get(raw, canon(raw))
+            overrides.setdefault(c, d)
+        json.dump(overrides, open(os.path.join(OUT_PROC, "date_overrides.json"), "w"), indent=1)
     return res
 
 
@@ -153,17 +178,18 @@ def irt_stats(res: pd.DataFrame) -> pd.DataFrame:
         piv = g.pivot_table(index="model", columns="problem_id", values="pass1")
         X = piv.to_numpy(dtype=float)
         m = X.shape[0]
-        totals = X.sum(axis=1, keepdims=True)
+        n = np.sum(~np.isnan(X), axis=0)
+        totals = np.nansum(X, axis=1, keepdims=True)
         R = totals - X
         with np.errstate(invalid="ignore", divide="ignore"):
-            zx = (X - X.mean(0)) / X.std(0)
-            zr = (R - R.mean(0)) / R.std(0)
+            zx = (X - np.nanmean(X, 0)) / np.nanstd(X, 0)
+            zr = (R - np.nanmean(R, 0)) / np.nanstd(R, 0)
             disc = np.nanmean(zx * zr, axis=0)
-        solve = X.mean(0)
-        degenerate = (m < 8) | (solve <= 0) | (solve >= 1) | (X.std(0) == 0) | (R.std(0) == 0)
+        solve = np.nanmean(X, axis=0)
+        degenerate = (n < 8) | (solve <= 0) | (solve >= 1) | (np.nanstd(X, 0) == 0) | (np.nanstd(R, 0) == 0)
         disc[degenerate] = np.nan
         out.append(pd.DataFrame({"benchmark": bench, "problem_id": piv.columns,
-                                 "n_models": m, "solve_rate": solve, "discrimination": disc}))
+                                 "n_models": n, "solve_rate": solve, "discrimination": disc}))
     return pd.concat(out, ignore_index=True)
 
 

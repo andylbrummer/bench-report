@@ -33,6 +33,7 @@ jobs:
       - run: python pipeline/fetch_eval_arena.py
       - run: python pipeline/fetch_metadata.py
       - run: python pipeline/fetch_epoch.py
+      - run: python pipeline/fetch_epoch_swe.py
       - run: python pipeline/build.py
       - run: python pipeline/export_site.py
       - uses: actions/upload-pages-artifact@v3

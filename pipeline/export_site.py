@@ -34,7 +34,11 @@ VARIANT_SUFFIXES = ("-instruct", "-thinking", "-base")
 def load_model_dates():
     with open(MODEL_DATES_PATH) as f:
         raw = json.load(f)
-    return {k: v for k, v in raw.items() if not k.startswith("_")}
+    dates = {k: v for k, v in raw.items() if not k.startswith("_")}
+    overrides_path = os.path.join(PROC, "date_overrides.json")
+    if os.path.exists(overrides_path):
+        dates.update(json.load(open(overrides_path)))
+    return dates
 
 
 def lookup_release_date(model_id, dates):
