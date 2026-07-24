@@ -1,0 +1,50 @@
+{
+  "_comment": "Canonical model family -> release date (YYYY-MM-DD, best-known, approximate). Lookup strips size (-NNb) and variant (-instruct/-thinking/-base) suffixes. Edit freely; rebuild to apply.",
+
+  "gpt-3.5": "2023-03-01", "gpt-4": "2023-03-14", "gpt-4-turbo": "2023-11-06",
+  "gpt-4o": "2024-05-13", "gpt-4o-mini": "2024-07-18", "gpt-4.1": "2025-04-14",
+  "gpt-5": "2025-08-07", "gpt-5.1": "2025-11-12", "gpt-5.2": "2025-12-11",
+  "o1-preview": "2024-09-12", "o1-mini": "2024-09-12", "o1": "2024-12-05",
+  "o3-mini": "2025-01-31", "o3": "2025-04-16", "o4-mini": "2025-04-16",
+
+  "claude-2": "2023-07-11", "claude-3-haiku": "2024-03-13", "claude-3-sonnet": "2024-03-04",
+  "claude-3-opus": "2024-03-04", "claude-3.5-sonnet": "2024-06-20", "claude-3.5-haiku": "2024-10-22",
+  "claude-3.7-sonnet": "2025-02-24", "claude-sonnet-4": "2025-05-22", "claude-opus-4": "2025-05-22",
+  "claude-opus-4.1": "2025-08-05", "claude-sonnet-4.5": "2025-09-29", "claude-haiku-4.5": "2025-10-15",
+  "claude-opus-4.5": "2025-11-24",
+
+  "gemini-1.5-pro": "2024-02-15", "gemini-1.5-flash": "2024-05-14",
+  "gemini-2.0-flash": "2025-02-05", "gemini-2.5-pro": "2025-03-25", "gemini-2.5-flash": "2025-04-17",
+  "gemini-3-pro": "2025-11-18",
+
+  "deepseek-coder": "2023-11-02", "deepseek-coder-v2": "2024-06-17", "deepseek-v2.5": "2024-09-05",
+  "deepseek-v3": "2024-12-26", "deepseek-r1": "2025-01-20", "deepseek-v3.1": "2025-08-19",
+  "deepseek-v3.2": "2025-09-29",
+
+  "qwen1.5": "2024-02-05", "codeqwen1.5": "2024-04-10", "qwen2": "2024-06-06",
+  "qwen2.5": "2024-09-19", "qwen2.5-coder": "2024-11-11", "qwq-32b": "2025-03-06",
+  "qwen3": "2025-04-28", "qwen3-coder": "2025-07-22",
+
+  "codellama": "2023-08-24", "llama-3": "2024-04-18", "llama-3.1": "2024-07-23", "llama-3.3": "2024-12-06",
+
+  "mistral": "2023-09-27", "mixtral": "2023-12-11", "mistral-large": "2024-02-26",
+  "codestral": "2024-05-29", "ministral": "2024-10-16",
+
+  "gemma": "2024-02-21", "gemma-2": "2024-06-27", "gemma-3": "2025-03-12",
+  "phi": "2023-06-20", "phi-3": "2024-04-23", "phi-4": "2024-12-12",
+
+  "grok": "2023-11-04", "grok-2": "2024-08-13", "grok-3": "2025-02-17", "grok-4": "2025-07-09",
+  "glm": "2024-06-05", "glm-4.6": "2025-09-30", "glm-4.7": "2025-11-20",
+  "kimi": "2024-03-18", "kimi-k2": "2025-07-11",
+  "yi": "2023-11-05", "yi-large": "2024-05-13", "yi-coder": "2024-09-05",
+  "command-r": "2024-03-11", "command-r-plus": "2024-04-04",
+  "granite": "2024-05-06", "exaone": "2024-08-07", "doubao": "2024-05-15", "ernie": "2023-08-31",
+  "minimax": "2025-01-15", "nova-pro": "2024-12-03", "amazon-q": "2024-04-30",
+
+  "starcoder": "2023-05-04", "starcoder2": "2024-02-28", "starchat": "2024-03-15",
+  "codegen": "2022-09-27", "incoder": "2022-12-30", "santacoder": "2023-01-19",
+  "magicoder": "2023-12-01", "opencoder": "2024-11-08", "phind": "2023-08-22",
+  "wizardcoder": "2023-06-14", "octocoder": "2023-08-15", "openchat": "2023-09-01",
+  "azero": "2025-03-10", "lfm": "2024-10-01", "jamba": "2024-03-27",
+  "internlm": "2023-09-20", "chatglm": "2023-03-14", "cwm": "2025-09-17"
+}
