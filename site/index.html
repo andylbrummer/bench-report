@@ -3,25 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LLM Coding Capability Profiles</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%235aa9ff'/></svg>">
+<title>Frontier Coding Models — last 6 months</title>
+<meta name="description" content="What the last six months of public coding-benchmark data says about the Claude, OpenAI, Google, GLM, Qwen and Kimi model families.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='4' fill='%232a78d6'/></svg>">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <h1><a href="#/">LLM Coding Capability Profiles</a></h1>
-  <nav>
+  <div class="brand"><a href="#/">Frontier Coding Models</a></div>
+  <nav id="nav">
     <a href="#/">Overview</a>
+    <a href="#/families">Families</a>
+    <a href="#/head-to-head">Head-to-head</a>
+    <a href="#/effort">Effort &amp; cost</a>
     <a href="#/benchmarks">Benchmarks</a>
-    <a href="#/models">Models</a>
-    <a href="#/clusters">Clusters</a>
-    <a href="#/frontier">Frontier</a>
-    <a href="#/audit">Data Audit</a>
-    <a href="#/methodology">Methodology</a>
+    <a href="#/method">Method</a>
   </nav>
+  <button id="theme" type="button">Theme</button>
 </header>
 <main id="app">Loading…</main>
 <footer id="footer"></footer>
+<div id="tip"></div>
 <script src="app.js"></script>
 </body>
 </html>
