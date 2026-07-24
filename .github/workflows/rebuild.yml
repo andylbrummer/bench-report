@@ -1,0 +1,49 @@
+name: rebuild-report
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: raw-data-${{ github.run_number }}
+          restore-keys: raw-data-
+      - run: pip install -r requirements.txt
+      - run: python pipeline/fetch_eval_arena.py
+      - run: python pipeline/fetch_metadata.py
+      - run: python pipeline/fetch_epoch.py
+      - run: python pipeline/build.py
+      - run: python pipeline/export_site.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
