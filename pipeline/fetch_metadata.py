@@ -58,6 +58,17 @@ def bigcodebench() -> None:
         "libs": [",".join(x) for x in ds["libs"]],
     })
     save(df, "bigcodebench")
+    base = "https://huggingface.co/datasets/bigcode/bigcodebench-solve-rate/resolve/main/data"
+    parts = []
+    for split in ("complete", "instruct"):
+        dest = os.path.join(OUT_DIR, f"bigcodebench_solve_{split}.parquet")
+        if not os.path.exists(dest):
+            urllib.request.urlretrieve(f"{base}/{split}-00000-of-00001.parquet", dest)
+        parts.append(pd.read_parquet(dest).set_index("task_id"))
+    merged = parts[0].join(parts[1], lsuffix="_complete", rsuffix="_instruct")
+    merged["solve_rate"] = merged[["solve_rate_complete", "solve_rate_instruct"]].mean(axis=1)
+    merged = merged.reset_index()[["task_id", "solve_rate"]].rename(columns={"task_id": "problem_id"})
+    save(merged, "bigcodebench_solve")
 
 
 def safim() -> None:
